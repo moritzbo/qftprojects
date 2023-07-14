@@ -1,0 +1,45 @@
+\section{Introduction}
+
+\begin{tikzpicture}[line width=1.2 pt, scale=1]
+
+    % Gluons
+    \draw[gluon] (0,0) -- (2,0);
+    \node at (0,0) [left] {$g$};
+    \draw[gluon] (0,2) -- (2,2);
+    \node at (0,2) [left] {$g$};
+
+    % Top Quark Loop
+    \draw[fermionbar] (2,0) -- (3.5,1);
+    \node at (2,1) [left] {$t, b$};
+    \draw[fermion] (2,2) -- (3.5,1);
+    \node at (2.75,1.5) [above] {};
+    \draw[fermion] (2,0) -- (2,2);
+    \node at (2.75, 0.5) [below]{};
+
+    % Scalars
+    \draw[scalarnoarrow] (3.5,1) -- (5,1);
+    \node at (4.25, 1) [above] {$H$};
+    \draw[scalarnoarrow] (5,1) -- (6.5,2);
+   % \filldraw (6.5,2) ++rectangle(3pt,3pt);
+    \node at (6.5, 2) [right] {$H$};
+    \draw[scalarnoarrow] (5,1) -- (6.5,0);
+    \node at (6.5,0 ) [right] {$H$};
+
+\end{tikzpicture}
+\begin{tikzpicture}[line width=1.5 pt, scale=2]
+    \draw[fermion](145:1) -- (145:.3cm);
+        \node at (145:1.15) {$\chi$};
+    \draw[fermion](215:1) -- (215:.3cm);
+        \node at (215:1.2) {SM};
+    \draw[fermionbar](35:1) -- (35:.3cm);
+        \node at (35:1.15) {$\chi$};
+    \draw[fermionbar](-35:1) -- (-35:.3cm);
+        \node at (-35:1.2) {SM};
+    \draw[fill=black] (0,0) circle (.3cm);
+    \draw[fill=white] (0,0) circle (.29cm);
+    \begin{scope}
+        \clip (0,0) circle (.3cm);
+        \foreach \x in {-.9,-.8,...,.3}
+            \draw[line width=1 pt] (\x,-.3) -- (\x+.6,.3);
+      \end{scope}
+ \end{tikzpicture}	
